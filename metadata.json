@@ -1,0 +1,5 @@
+{
+  "name": "Group Link Collector",
+  "description": "A simulation of a group scraping tool with a linux-terminal aesthetic, featuring a 7-hour link collection process and high-precision counter.",
+  "requestFramePermissions": []
+}

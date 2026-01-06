@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Linux Update Simulator</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom cursor blinking animation */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor-blink {
+      animation: blink 1s step-end infinite;
+    }
+    
+    /* CRT Scanline effect */
+    .scanlines {
+      background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0) 50%,
+        rgba(0,0,0,0.1) 50%,
+        rgba(0,0,0,0.1)
+      );
+      background-size: 100% 4px;
+      pointer-events: none;
+    }
+
+    /* Slight flicker */
+    @keyframes flicker {
+      0% { opacity: 0.97; }
+      5% { opacity: 0.95; }
+      10% { opacity: 0.9; }
+      15% { opacity: 0.95; }
+      20% { opacity: 0.99; }
+      50% { opacity: 0.95; }
+      80% { opacity: 0.9; }
+      100% { opacity: 0.97; }
+    }
+    .crt-flicker {
+      animation: flicker 0.15s infinite;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "rxjs": "https://esm.sh/rxjs@^7.8.2?conditions=es2015",
+    "rxjs/operators": "https://esm.sh/rxjs@^7.8.2/operators?conditions=es2015",
+    "rxjs/ajax": "https://esm.sh/rxjs@^7.8.2/ajax?conditions=es2015",
+    "rxjs/webSocket": "https://esm.sh/rxjs@^7.8.2/webSocket?conditions=es2015",
+    "rxjs/testing": "https://esm.sh/rxjs@^7.8.2/testing?conditions=es2015",
+    "rxjs/fetch": "https://esm.sh/rxjs@^7.8.2/fetch?conditions=es2015",
+    "@angular/compiler": "https://esm.sh/@angular/compiler@^21.0.6?external=rxjs",
+    "@angular/platform-browser": "https://esm.sh/@angular/platform-browser@^21.0.6?external=rxjs",
+    "@angular/core": "https://esm.sh/@angular/core@^21.0.6?external=rxjs",
+    "@angular/common": "https://esm.sh/@angular/common@^21.0.6?external=rxjs"
+  }
+}
+</script>
+</head>
+<body class="bg-black overflow-hidden h-screen w-screen m-0 p-0 text-gray-200 font-mono">
+  <app-root></app-root>
+</body>
+</html>
