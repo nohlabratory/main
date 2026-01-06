@@ -1,4 +1,4 @@
-import { Component, signal, computed, effect, OnDestroy, OnInit } from '@angular/core';
+import { Component, signal, computed, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 type AppState = 'boot' | 'collecting' | 'blackout' | 'finalizing' | 'complete';
